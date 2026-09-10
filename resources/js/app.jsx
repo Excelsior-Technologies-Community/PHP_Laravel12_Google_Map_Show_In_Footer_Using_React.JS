@@ -7,6 +7,12 @@ import { createRoot } from 'react-dom/client'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel'
 
+const savedTheme = window.localStorage.getItem('theme')
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light')
+document.documentElement.classList.toggle('dark', initialTheme === 'dark')
+document.documentElement.style.colorScheme = initialTheme
+
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) =>
