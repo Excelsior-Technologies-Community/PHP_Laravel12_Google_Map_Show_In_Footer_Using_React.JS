@@ -1,14 +1,14 @@
 import AppLayout from '@/Layouts/AppLayout'
 
-export default function About() {
+export default function About({ locations = [], settings = {} }) {
     return (
-        <AppLayout>
+        <AppLayout locations={locations} settings={settings}>
             {/* Page Header */}
             <section className="text-center py-16">
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                    About Us
+                <h1 className="mb-4 text-4xl font-bold text-slate-900 dark:text-white">
+                    {settings.about_title || 'About Us'}
                 </h1>
-                <p className="text-gray-600 max-w-2xl mx-auto">
+                <p className="mx-auto max-w-2xl text-slate-600 dark:text-slate-300">
                     We are a passionate team dedicated to building modern,
                     reliable, and scalable web applications for businesses
                     worldwide.
@@ -21,13 +21,11 @@ export default function About() {
                     Who We Are
                 </h2>
 
-                <p className="text-gray-600 leading-relaxed mb-4">
-                    MyCompany is a technology-driven company focused on delivering
-                    high-quality digital solutions. We specialize in Laravel and
-                    React to create fast, secure, and scalable web applications.
+                <p className="mb-4 leading-relaxed text-slate-600 dark:text-slate-300">
+                    {settings.about_content || 'MyCompany is a technology-driven company focused on delivering high-quality digital solutions. We specialize in Laravel and React to create fast, secure, and scalable web applications.'}
                 </p>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="leading-relaxed text-slate-600 dark:text-slate-300">
                     Our mission is to help startups and enterprises transform
                     their ideas into powerful digital products that make a real impact.
                 </p>
@@ -35,23 +33,23 @@ export default function About() {
 
             {/* Values */}
             <section className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div className="p-6 border rounded-lg hover:shadow">
+                <div className="rounded-lg border border-slate-200 bg-white p-6 hover:shadow dark:border-slate-700 dark:bg-slate-800">
                     <h3 className="text-xl font-semibold mb-2">💡 Innovation</h3>
-                    <p className="text-gray-600">
+                    <p className="text-slate-600 dark:text-slate-300">
                         We use modern technologies to build future-ready solutions.
                     </p>
                 </div>
 
-                <div className="p-6 border rounded-lg hover:shadow">
+                <div className="rounded-lg border border-slate-200 bg-white p-6 hover:shadow dark:border-slate-700 dark:bg-slate-800">
                     <h3 className="text-xl font-semibold mb-2">🤝 Trust</h3>
-                    <p className="text-gray-600">
+                    <p className="text-slate-600 dark:text-slate-300">
                         Transparency and honesty are at the core of everything we do.
                     </p>
                 </div>
 
-                <div className="p-6 border rounded-lg hover:shadow">
+                <div className="rounded-lg border border-slate-200 bg-white p-6 hover:shadow dark:border-slate-700 dark:bg-slate-800">
                     <h3 className="text-xl font-semibold mb-2">🎯 Quality</h3>
-                    <p className="text-gray-600">
+                    <p className="text-slate-600 dark:text-slate-300">
                         We deliver reliable, maintainable, and high-quality products.
                     </p>
                 </div>

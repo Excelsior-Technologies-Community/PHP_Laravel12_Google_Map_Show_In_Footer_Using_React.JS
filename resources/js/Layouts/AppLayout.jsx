@@ -1,7 +1,7 @@
 import Header from './Header'
 import Footer from './Footer'
 
-export default function AppLayout({ children }) {
+export default function AppLayout({ children, locations = [], settings = {} }) {
     return (
         <div className="min-h-screen flex flex-col">
             <Header />
@@ -10,7 +10,7 @@ export default function AppLayout({ children }) {
                 {children}
             </main>
 
-            <Footer />
+            <Footer locations={locations} settings={settings} />
         </div>
     )
 }
