@@ -46,9 +46,25 @@ export default function Footer({ locations = [], settings = {} }) {
 
                 {/* Map */}
                 <div className="md:col-span-2">
-                    <h4 className="mb-3 font-semibold text-white">Our Locations</h4>
+                    <h4 className="mb-3 font-semibold text-white">
+                        Our Locations
+                    </h4>
+
                     <LocationMap locations={locations} className="h-40" />
-                    <div className="mt-3 space-y-2 text-sm">{locations.map((location) => <a key={location.id} href={`https://www.google.com/maps/dir/?api=1&destination=${location.latitude},${location.longitude}`} target="_blank" rel="noreferrer" className="block hover:text-cyan-400">{location.name} · Get directions</a>)}</div>
+
+                    <div className="mt-3 space-y-2 text-sm">
+                        {locations.map((location) => (
+                            <a
+                                key={location.id}
+                                href={`https://www.google.com/maps/dir/?api=1&destination=${location.latitude},${location.longitude}`}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="block hover:text-cyan-400"
+                            >
+                                {location.name} · Get directions
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
 
